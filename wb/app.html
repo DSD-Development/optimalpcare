@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="app-assets/assets/css/style.css">
+    <link rel="icon" type="png" href="app-assets/assets/img/logo.png">
+    <title>OptimalPCare</title>
+</head>
+<body>
+    <img src="app-assets/assets/img/bg.jpg" class="backgroundBody">
+
+    <div class="container-fluid" style="margin-top: 100px;" id="loginContainer">
+        <div class="m-auto backgroundBlur form-Size">
+            <div class="row justify-content-center">
+                <div class="col-9">
+                  <img src="app-assets/assets/img/logo.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center" style="margin-top: -20px;">
+                <form style="color: #ffffff; font-weight: 700; width: 500px;">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="button" class="btn btn-primary btnLogin-Register" id="btnLogin">Accesso</button>
+                    <a style="margin-left: 15px;"><br><br>Non hai Creato Un'Account, <span id="btnRegister" style="cursor: pointer; color: violet;">Registrati</span></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="registerContainer" style="display: none; margin-top: 40px;">
+        <div class="m-auto backgroundBlur form-Size2">
+            <div class="row justify-content-center">
+                <div class="col-7">
+                  <img src="app-assets/assets/img/logo.png" class="img-fluid">
+                </div>
+            </div>
+            <div class="container d-flex justify-content-center" style="margin-top: 20px;">
+                <form style="color: #ffffff; font-weight: 700; width: 500px;">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail12" class="form-label">Nome Completo</label>
+                        <input type="email" class="form-control" id="exampleInputEmail12" aria-describedby="emailHelp">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail122" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail122" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword12" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword12">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Imagine Profilo</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btnLogin-Register" id="btnCreateAccount">Registrati</button>
+                    <a style="margin-left: 15px;"><br><br>Hai Creato Un'Account, <span id="btnAccesso" style="cursor: pointer; color: violet;">Accedi</span></a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="appContent" id="appContent" style="display: none;">
+        <button class="btn btn-primary btnMenu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" id="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    
+        <div class="profileContainer" id="profileContainer">
+            <img class="profileImage" id="profileImg2"></img>
+            <p id="userName">Caricamento...</p>
+        </div>
+
+        <button class="btn btn-primary btnDashboard" type="button" id="btnDashboard">
+            <i class="fa-brands fa-windows"></i>
+        </button>
+
+        <button class="btn btn-primary btnSpeedTest" type="button" id="btnSpeedTest">
+            <i class="fa-solid fa-gauge-high"></i>
+        </button>
+        
+        <div class="divOrario">
+            <p id="clock"></p>
+        </div>
+
+        <div class="containerPcInformation backgroundBlur" id="dashboardDiv">
+            <h1 class="setFontBold setFontMW" style="margin: 20px; color: #ffffff; letter-spacing: 1.5px;">Informazioni Computer</h1>
+            <div class="userPcInf" style="color: #ffffff;">
+                <span>IP: <p id="IpText"></p></span>
+                <span>Città: <p id="CityText"></p></span>
+                <span>Paese: <p id="CountryText"></p></span>
+                <span>Sistema Operativo: <p id="SOText"></p></span>
+            </div>
+            <div class="lineOr"></div>
+            <img src="app-assets/assets/img/logo.png" class="img-fluid pcInfoIMG">
+        </div>
+
+        <div class="menuOption backgroundBlur" id="menuOption" style="display: none;">
+            <div class="btnOptiondiv">
+                <p>OptimalPCare Menu</p>
+                <br>
+                <button class="btn btn-secondary btnCanvas" type="button" id="eliminaFileTemporanei" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close">Elimina i File Temp di Windows</button>
+                <button class="btn btn-secondary btnCanvas" type="button" id="verificafile" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close" style="margin-top: 10px;">Verifica e riparazione dei file di sistema</button>
+                <button class="btn btn-secondary btnCanvas" type="button" id="ottimizzazionecomvari" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close" style="margin-top: 10px;">Ottimizzazione Windows con Vari Comandi</button>
+                <button class="btn btn-secondary btnCanvas" type="button" id="puliziacomponenti" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close" style="margin-top: 10px;">Verifica e Riparazione dei Componenti di Sistema</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center" id="loadingContainer" style="background-color: rgba(255, 0, 0, 0.414)(0, 0, 0); height: 100vh; display: none; z-index: 99;">
+        <div style="margin-top: 120px;">
+            <i class="fa-solid fa-rotate fa-spin" style="color: #ffffff; font-size: 100px;"></i>
+            <p id="loadingContainerText" style="margin-top: 40px; color: #ffffff; font-weight: 700;"></p>
+        </div>
+    </div>
+
+    <div class="speedTest backgroundBlur" id="speedTestDiv">
+        <p id="titleSpeedTest" class="text-center">OptimalPCare | Speed Test</p>
+        <div id="progressSpeedTest"></div>   
+        <p id="speedTestResult"></p>  
+        <button id="startSpeedTest" class="setFontMW">inizia</button>     
+    </div>
+
+    <div class="profileInformationContainer profileCard backgroundBlur" id="profileInformationContainer" style="display: none;">
+        <img id="profileImg" class="img-thumbnail">
+        <h4 id="userName2"></h4>
+        <div class="container">
+            <h5 class="text-start" style="margin-top: 30px; margin-left: 15px; color: #ffffff; font-weight: 700;">Email</h5>
+            <p class="text-center" id="profileEmail" style="color: rgb(184, 184, 184);">Caricamento...</p>
+            <h5 class="text-start" style="margin-top: 20px; margin-left: 15px; color: #ffffff; font-weight: 700;">Password</h5>
+            <p class="text-start" style="color: rgb(184, 184, 184); margin-left: 15px;"><span id="passwordText">********</span> <i class="fa-solid fa-eye fa-bounce" id="showpassword" style="cursor: pointer; z-index: 99;"></i></p>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" data-bs-theme="dark">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img src="app-assets/assets/img/logo.png" width="30" height="30" class="rounded me-2">
+                <strong class="me-auto">OptimalPCare</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="notifyText" style="color: #ffffff;"></div>
+        </div>
+    </div>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/0.6.1/progressbar.min.js" integrity="sha512-7IoDEsIJGxz/gNyJY/0LRtS45wDSvPFXGPuC7Fo4YueWMNOmWKMAllEqo2Im3pgOjeEwsOoieyliRgdkZnY0ow==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7fc82cf53a.js" crossorigin="anonymous"></script>
+    <script type="module" src="app-assets/assets/js/getUserPcInformation.js"></script>
+    <script type="module" src="app-assets/assets/js/web.js"></script>
+    <script type="module" src="app-assets/db/db.js"></script>
+    <script type="module" src="app-assets/db/accessInfo.js"></script>
+    <script>
+        document.oncontextmenu = function() {return false;}
+        $(document).keydown(function (event) {
+            if (event.keyCode == 123) {return false;} 
+            else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) {return false;}
+        });
+    </script>
+</body>
+</html>
