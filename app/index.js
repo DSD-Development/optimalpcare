@@ -1,6 +1,6 @@
 const express = require('express');
 const { exec } = require('child_process');
-const expressApp = express();
+const expressApp = express.Router();
 const port = 3000;
 
 expressApp.get('/elimina-temporanei', (req, res) => {
@@ -54,5 +54,3 @@ expressApp.get('/puliziacomponenti', (req, res) => {
     exec(command, (error, stdout, stderr) => {});
     exec(command2, (error, stdout, stderr) => {});
 });
-
-expressApp.listen(port, () => {console.log(`Server avviato su http://localhost:${port}`);});
